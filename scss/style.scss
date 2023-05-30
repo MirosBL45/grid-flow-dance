@@ -1,0 +1,256 @@
+* {
+	box-sizing: border-box;
+}
+
+.naslov {
+	color: indigo;
+}
+
+.paja {
+	color: green;
+}
+
+.glavni {
+	height: 600px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 10px;
+
+	img {
+		max-width: 100%;
+		// height: 100%;
+		// object-fit: cover;
+		grid-column: 2 / 4;
+		grid-row: 1 / 2;
+	}
+
+	.prvi {
+		background: rgba($color: green, $alpha: 0.5);
+		grid-column: 2 / 4;
+		grid-row: 1 / 3;
+	}
+
+	.drugi {
+		background: rosybrown;
+		grid-column: 1;
+		grid-row: 1 / 3;
+	}
+}
+
+.zika {
+	margin-top: 20px;
+	color: rgb(220, 217, 20);
+}
+
+.spolja {
+	margin: 20px 0 70px;
+	height: 590px;
+	gap: 7px;
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+	grid-template-areas: "nav nav nav nav" "side main main main" "side c1 c2 c3" "side fot fot fot";
+
+	& > div {
+		padding: 5px;
+		border-radius: 8px;
+	}
+}
+
+.navbar {
+	background: red;
+	grid-area: nav;
+}
+
+.maina {
+	background: chartreuse;
+	grid-area: main;
+}
+
+.sidebar {
+	background: rgb(76, 0, 255);
+	grid-area: side;
+}
+
+.con1 {
+	background: crimson;
+	grid-area: c1;
+}
+.con2 {
+	background: rgb(20, 220, 193);
+	grid-area: c2;
+}
+.con3 {
+	background: rgb(20, 220, 47);
+	grid-area: c3;
+}
+.footero {
+	background: darkgoldenrod;
+	grid-area: fot;
+}
+
+.napolju {
+	margin: 20px 0 70px;
+	gap: 7px;
+	text-align: center;
+	display: grid;
+	grid-template: 50px 50px / 400px 2fr 1fr;
+
+	& > div {
+		padding: 5px;
+		border-radius: 8px;
+	}
+
+	.plavi {
+		background: blue;
+	}
+	.zeleni {
+		background: rgb(21, 255, 0);
+	}
+	.crveni {
+		background: rgb(255, 0, 0);
+	}
+	.zuti {
+		background: rgb(195, 255, 0);
+	}
+	.ljubicast {
+		background: rgb(183, 0, 255);
+	}
+	.rozi {
+		background: rgb(255, 0, 242);
+	}
+}
+
+.fitara {
+	margin: 20px 0 70px;
+	gap: 7px;
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	// grid-template-rows: repeat(2, 100px);
+	grid-auto-rows: 100px;
+
+	& > div {
+		background: goldenrod;
+		border: 2px solid red;
+		padding: 5px;
+		border-radius: 8px;
+	}
+}
+
+.fitara2 {
+	margin: 20px 0 70px;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+
+	& > div {
+		width: 100px;
+		height: 100px;
+		background: rgb(85, 218, 32);
+		border: 2px solid rgb(195, 0, 255);
+		padding: 5px;
+		border-radius: 8px;
+	}
+}
+
+.slike {
+	border: 4px solid blue;
+	padding: 10px;
+	// height: 500px;
+	background: chocolate;
+	margin: 20px 50px 70px;
+	display: grid;
+	grid-gap: 5px;
+	// justify-content: space-around;
+	align-content: center;
+	// justify-items: center;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	grid-auto-rows: 75px;
+	grid-auto-flow: dense;
+
+	img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+
+	.horizontal {
+		grid-column: span 2;
+	}
+
+	.vertical {
+		grid-row: span 2;
+	}
+
+	.big {
+		grid-column: span 2;
+		grid-row: span 2;
+		// align-self: center
+	}
+}
+
+article {
+	display: grid;
+	grid-template-columns: 120px 1fr 120px;
+	gap: 15px;
+}
+
+article > * {
+	grid-column: 2;
+	min-width: 0;
+}
+
+article > .flasa {
+	grid-column: 1 / -1;
+	background: rgb(250, 219, 219);
+}
+
+article > .hema {
+	grid-column: 3;
+	color: grey;
+	background: rgb(255, 255, 195);
+	font-size: 0.8rem;
+}
+
+article > .mika {
+	grid-column: 1 / -2;
+	background: rgb(110, 136, 110);
+}
+
+.papir {
+	display: grid;
+	grid-template-columns: 1fr 2.5fr;
+	grid-template-areas:
+	"h h"
+	"s m"
+	"s f";
+	margin: 30px 90px 50px;
+
+	.h {
+		background: rosybrown;
+		grid-area: h;
+	}
+
+	.s {
+		background: lightblue;
+		grid-area: s;
+	}
+
+	.m {
+		background: lightgreen;
+		grid-area: m;
+		align-self: start;
+	}
+
+	.f {
+		background: lightsalmon;
+		grid-area: f;
+		align-self: end;
+	}
+}
+
+@import 'media';
